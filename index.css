@@ -1,0 +1,81 @@
+@import 'https://code.highcharts.com/css/highcharts.css';
+
+.dashboard {
+    width: 70%;
+    margin: auto;
+    padding-top: 100px;
+
+}
+
+.container {
+    border: 1px solid rgba(40, 40, 40, 0.3);
+    border-radius: 5px;
+    height: 500px;
+}
+
+#chartContainer {
+    min-width: 310px;
+    /*width: 40%;*/
+    margin: 0 auto;
+}
+
+.textContainer {
+    /*background-color: black;*/
+    /*width: 100%;*/
+    overflow-y: scroll;
+}
+
+.textBox {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 100%;
+}
+
+.textBox h2 {
+    font-size: 1.7em;
+}
+
+.titleDate {
+    font-size: 0.5em !important;
+}
+
+
+/*///////////////Highcharts customizations //////////////*/
+
+.highcharts-title {
+    fill: #434348;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*letter-spacing: 0.3em;*/
+    font-size: 3em;
+}
+
+.highcharts-subtitle {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.highcharts-xaxis-labels {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.highcharts-yaxis {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.highcharts-text-outline {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.highcharts-menu-item {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2em !important;
+}
+
+.highcharts-menu {
+
+}
