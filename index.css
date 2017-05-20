@@ -17,6 +17,8 @@
     min-width: 310px;
     /*width: 40%;*/
     margin: 0 auto;
+    margin-top: 20px;
+
 }
 
 .textContainer {
@@ -25,8 +27,12 @@
     overflow-y: scroll;
 }
 
+.textContainer h1 {
+    margin-top: 25px;
+}
+
 .textBox {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     margin-bottom: 4px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -40,8 +46,18 @@
 .titleDate {
     font-size: 0.5em !important;
 }
+.chartToolbar {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    height: 50px;
+    margin-top: 10px;
+}
 
 
+.weatherStation {
+    width: 20%;
+    height: 100%;
+}
 /*///////////////Highcharts customizations //////////////*/
 
 .highcharts-title {
@@ -78,4 +94,8 @@
 
 .highcharts-menu {
 
+}
+
+.highcharts-credits {
+    display: none;
 }

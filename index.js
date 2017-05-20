@@ -1,10 +1,16 @@
 let tempType = 'c';
 let data = [];
 let dates = [];
+let station = '1';
+let chart;
+window.onload = function(){
+    $('.weatherStation').change((e) => {
+        station = e.target.value;
+        resetChart();
+    });
+    getForecasts('en'); // Fill the first component
+    getTextNews(); // Fill the second component
 
-window.onload = function() {
-    getForecasts('en'); // The first component
-    getTextNews(); // The second component
 }
 
 //Fetch the forecast for the next 9 days
@@ -13,7 +19,7 @@ function getForecasts(language){
         'url': 'http://apis.is/weather/forecasts/' + language,
         'type':'GET',
         'dataType': 'json',
-        'data': {'stations': '1,31579,499'},
+        'data': {'stations': station},
         'success': function(res){
             calculateForecastData(res.results[0], 'c');
         }
@@ -35,19 +41,20 @@ function calculateForecastData(forecasts){
         }
         lastDate = forecasts.forecast[i].ftime.split(' ')[0];
     }
-    drawChart(dates, data);
+    drawChart(forecasts.name, dates, data);
 }
 
-function drawChart(dates, data) {
-    Highcharts.chart('chartContainer', {
+function drawChart(name, dates, data){
+
+    chart = new Highcharts.chart('chartContainer', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'Average Temperatures from ' + dates[0] + ' until ' + dates[dates.length - 1]
+        text: 'Average Temperatures'
     },
     subtitle: {
-        text: 'Station: Reykjavík'
+        text: dates[0] + ' - ' + dates[dates.length - 1]
     },
     xAxis: {
         categories: dates
@@ -66,10 +73,17 @@ function drawChart(dates, data) {
         }
     },
     series: [{
-        name: 'RVK',
+        name: name,
         data: data
     }]
     });
+}
+
+function resetChart(){
+    data = [];
+    dates = [];
+    chart.destroy();
+    getForecasts('en');
 }
 
 function getTextNews(){
@@ -78,7 +92,6 @@ function getTextNews(){
         'dataType': 'json',
         'data': {'types': '2,3,5,6,7'},
         'success': function(res){
-            console.log(res.results);
             for(var i in res.results){
 
                 let html = `
@@ -113,6 +126,5 @@ function formatDateTime(dateTime){
 //     'dataType': 'json',
 //     'data': {'stations': '1'},
 //     'success': function(res){
-//         console.log(res.results);
 //     }
 // });
