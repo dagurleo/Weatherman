@@ -1,8 +1,8 @@
-let tempType = 'c';
-let data = [];
-let dates = [];
-let station = '1';
-let chart;
+let tempType = 'c'; // Temptype -- TODO: store in cookie?
+let data = []; // Temperatures --TODO: rename
+let dates = []; // TODO: rename
+let station = '1'; //Tename
+let chart; //Rename 
 window.onload = function(){
     $('.weatherStation').change((e) => {
         station = e.target.value;
