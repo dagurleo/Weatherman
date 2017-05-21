@@ -11,21 +11,33 @@
         <script src="index.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     </head>
     <body>
-        <div class="row dashboard">
+        <nav class="topBar">
+            <p>Weatherman</p>
+        </nav>
+        <div class="row dashboard firstrow">
 
-            <div  class="col-sm-6 col-xs-12 container">
-                <div id="chartContainer"></div>
+            <div  class="col-md-6 col-xs-12 chartCont container">
+                <div id="chartContainer" class="chart"></div>
                 <div class="chartToolbar">
-                    <select class="weatherStation form-control" name="">
-                        <option value="1">Reykjavík</option>
-                        <option value="34175">Fjarðarheiði</option>
-                    </select>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Select a station</label>
+                            <select class="weatherStation form-control" multiple name="">
+                                <p>smegma</p>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary startCompare">Compare</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xs-12 textContainer container">
+            <div class="col-md-6 col-xs-12 textContainer container">
                 <h1>TextNews?</h1>
             </div>
         </div>

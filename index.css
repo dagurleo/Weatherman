@@ -13,7 +13,10 @@
     height: 500px;
 }
 
-#chartContainer {
+.secondrow {
+    margin-top: -40;
+}
+.chart {
     min-width: 310px;
     /*width: 40%;*/
     margin: 0 auto;
@@ -49,15 +52,45 @@
 .chartToolbar {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    height: 50px;
+    height: 30px;
     margin-top: 10px;
+}
+
+.startCompare {
+    height: 28px;
+    /*width: 20%;*/
+    float: right;
 }
 
 
 .weatherStation {
-    width: 20%;
+    width: 40%;
     height: 100%;
 }
+
+.topBar {
+    height: 60px;
+    background-color: #08B2E3;
+    width: 100%;
+    text-align: center;
+    /*border-bottom: 3px solid #08B2E3;*/
+    box-shadow: 0 3px 2px -2px gray;
+}
+
+.topBar p {
+    font-size: 3em;
+    width: 40%;
+    margin: auto;
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+
+
+
+
+
 /*///////////////Highcharts customizations //////////////*/
 
 .highcharts-title {
@@ -98,4 +131,17 @@
 
 .highcharts-credits {
     display: none;
+}
+
+
+/*//////SELECT2 SEARCH STYLING /////////// */
+.select2-selection select2-selection--single {
+    height: 50px !important;
+    padding-top: 5px !important;
+
+}
+
+.select2 select2-container select2-container--default select2-container--above select2-container--focus {
+    width: 40% !important;
+    height: 50px !important;
 }
