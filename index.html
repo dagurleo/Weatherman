@@ -11,8 +11,9 @@
         <script src="index.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     </head>
     <body>
@@ -22,23 +23,40 @@
         <div class="row dashboard firstrow">
 
             <div  class="col-md-6 col-xs-12 chartCont container">
+                <div class="loader chartLoader">
+
+                </div>
                 <div id="chartContainer" class="chart"></div>
                 <div class="chartToolbar">
                     <div class="row">
-                        <div class="col-md-6">
-                            <label>Select a station</label>
-                            <select class="weatherStation form-control" multiple name="">
+                        <div class="col-md-8 selectContainer">
+                            <select class="weatherStation form-control" name="">
                                 <p>smegma</p>
                             </select>
+                            <label class="selectLabel">Select a station</label>
                         </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-primary startCompare">Compare</button>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary startCompare" id="compareModeButton">Enable Compare mode</button>
                         </div>
+                    </div>
+                    <div class="row degrees">
+                        <div class="col-md-1 degreeChanger" id="celcius">°C</div>
+                        <div class="col-md-1 degreeChanger disabledDegreeType" id="fahrenheit">°F</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12 textContainer container">
-                <h1>TextNews?</h1>
+                <h1>Latest updates</h1>
+                <div class="loader textLoader">
+
+                </div>
+            </div>
+        </div>
+        <div class="row dashboard secondrow">
+            <div class="col-md-6 col-xs-12 container observationsContainer">
+                <div class="loader todayLoader">
+
+                </div>
             </div>
         </div>
     </body>

@@ -1,20 +1,54 @@
 @import 'https://code.highcharts.com/css/highcharts.css';
 
-.dashboard {
-    width: 70%;
-    margin: auto;
-    padding-top: 100px;
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1 {
+    font-size: 34px;
+}
+
+.topBar {
+    height: 60px;
+    background-color: #08B2E3;
+    width: 100%;
+    text-align: center;
+    /*border-bottom: 3px solid #08B2E3;*/
+    box-shadow: 0 3px 2px -2px gray;
+    margin-bottom: 25px;
+}
+
+.topBar p {
+    font-size: 3em;
+    width: 40%;
+    margin: auto;
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #555;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    margin-top: 25%;
+}
+
+.dashboard {
+    width: 60%;
+    margin: auto;
 }
 
 .container {
     border: 1px solid rgba(40, 40, 40, 0.3);
     border-radius: 5px;
     height: 500px;
-}
 
-.secondrow {
-    margin-top: -40;
 }
 .chart {
     min-width: 310px;
@@ -52,44 +86,59 @@
 .chartToolbar {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    height: 30px;
+    height: 32px;
     margin-top: 10px;
 }
 
-.startCompare {
+.selectContainer {
+    margin-top: 1px;
+}
+
+.selectLabel {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+}
+#compareModeButton {
     height: 28px;
     /*width: 20%;*/
     float: right;
+    font-size: 0.95em;
+    margin-top:1px;
 }
 
 
 .weatherStation {
     width: 40%;
     height: 100%;
+    margin-top: 1px;
 }
 
-.topBar {
-    height: 60px;
-    background-color: #08B2E3;
-    width: 100%;
+.degreeChanger {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.disabledDegreeType {
+    color: rgba(128,128,128, 0.7);
+}
+
+@media screen and (max-width: 972px) {
+
+}
+
+.obvRow {
+
+    margin-top: 55px;
+}
+
+.singleObv {
     text-align: center;
-    /*border-bottom: 3px solid #08B2E3;*/
-    box-shadow: 0 3px 2px -2px gray;
+    font-size: 2em;
 }
 
-.topBar p {
-    font-size: 3em;
-    width: 40%;
-    margin: auto;
-    color: #fff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+.secondrow {
+    margin-bottom: 50px;
 }
-
-
-
-
-
 
 /*///////////////Highcharts customizations //////////////*/
 
@@ -136,12 +185,19 @@
 
 /*//////SELECT2 SEARCH STYLING /////////// */
 .select2-selection select2-selection--single {
-    height: 50px !important;
+    height: 60px !important;
     padding-top: 5px !important;
+    margin-top: 1px;
 
 }
 
 .select2 select2-container select2-container--default select2-container--above select2-container--focus {
     width: 40% !important;
-    height: 50px !important;
+    height: 60px !important;
 }
+
+/*.select2 {
+    width: 200px;
+}*/
+/
+/*//////ANIMATIONS /////////// */
